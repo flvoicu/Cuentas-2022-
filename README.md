@@ -1,0 +1,1 @@
+Pequeño módulo de Odoo que permite a los usuarios gestionar de manera eficiente la información de inversores y clientes, enviar correos electrónicos automatizados y llevar un control sobre los servicios ofrecidos en diferentes plataformas.

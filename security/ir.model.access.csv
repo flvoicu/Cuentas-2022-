@@ -1,0 +1,4 @@
+inversores_inversor,Usuario Inversor,model_cuentas_inversores,group_inversor,1,0,0,0
+clientes_cliente,Usuario Cliente,model_cuentas_cliente,group_cliente,1,1,1,1
+
+

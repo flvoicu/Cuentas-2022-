@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>	
+	<menuitem id="menu_root_cuentas" name="Cuentas" sequence="30" />
+	
+    <record model="ir.ui.view" id="vista_cuenta_tree">
+        <field name="name">vista.cuenta.tree</field>
+        <field name="model">cuentas.inversores</field>
+        <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="nombre"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="vista_cuenta_form">
+        <field name="name">vista.cuenta.form</field>
+        <field name="model">cuentas.inversores</field>
+        <field name="arch" type="xml">
+            <form>
+                <group style="background-color:lightblue; color:grey"> 
+                    <field name="name"/>
+                    <field name="nombre"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="vista_cuenta_tree2">
+        <field name="name">vista.cuenta.tree2</field>
+        <field name="model">cuentas.clientes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nombre"/>
+                <button string="Email de alta" name="send_email" type="object"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="vista_cuenta_tree3">
+        <field name="name">vista.cuenta.tree</field>
+        <field name="model">cuentas.plataformas</field>
+        <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="vista_cuenta_tree4">
+        <field name="name">vista.cuenta.tree4</field>
+        <field name="model">cuentas.servicios</field>
+        <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="plataforma"/>
+              <field name="inversor"/>
+              <field name="cliente"/>
+              <field name="fecha1"/>
+              <field name="fecha2"/>
+            </tree>
+        </field>
+    </record> 
+
+    <record model="ir.actions.act_window" id="listar_inversores">
+            <field name="name">Inversores</field>
+            <field name="res_model">cuentas.inversores</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="listar_clientes">
+            <field name="name">Clientes</field>
+            <field name="res_model">cuentas.clientes</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="listar_plataformas">
+            <field name="name">Plataforma</field>
+            <field name="res_model">cuentas.plataformas</field>
+            <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="listar_servicios">
+            <field name="name">Servicios</field>
+            <field name="res_model">cuentas.servicios</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+	<menuitem id="menu_inversores"  name="Listar Inversores" parent="menu_root_cuentas" action="listar_inversores" />
+    <menuitem id="menu_clientes"  name="Listar Clientes" parent="menu_root_cuentas" action="listar_clientes" />
+    <menuitem id="menu_plataforma"  name="Listar Plataforma" parent="menu_root_cuentas" action="listar_plataformas" />
+    <menuitem id="menu_servicios"  name="Listar Servicios" parent="menu_root_cuentas" action="listar_servicios" />
+
+</odoo>
